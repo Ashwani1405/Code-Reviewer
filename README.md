@@ -65,10 +65,28 @@ npm run dev
 
 ## Usage
 
-1. Open http://localhost:5173 in your browser
+### Live Demo
+- Frontend: [https://code-reviewer-3axvuz4cd-ashwani005s-projects.vercel.app/](https://code-reviewer-3axvuz4cd-ashwani005s-projects.vercel.app/)
+- Backend API: [https://code-reviewer-i9vk.onrender.com](https://code-reviewer-i9vk.onrender.com)
+
+1. Visit the live demo or run locally
 2. Enter or paste your code in the editor
 3. Click "Review Code"
 4. View the AI-generated code review on the right panel
+
+## Deployment
+
+### Frontend (Vercel)
+The frontend is deployed on Vercel with the following configuration:
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Environment Variables: Set `VITE_API_URL` to the backend URL
+
+### Backend (Render)
+The backend is deployed on Render with the following configuration:
+- Build Command: `npm install`
+- Start Command: `node server.js`
+- Environment Variables: Set `GOOGLE_GEMINI_KEY` to your API key
 
 ## Technologies Used
 

@@ -6,7 +6,10 @@ const app = express()
 
 // Enable CORS for frontend requests
 app.use(cors({
-    origin: 'http://localhost:5173', // Vite's default port
+    origin: [
+        'https://code-reviewer-3axvuz4cd-ashwani005s-projects.vercel.app',
+        'http://localhost:5173' // Keep local development working
+    ],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type']
 }));
