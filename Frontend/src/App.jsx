@@ -37,10 +37,16 @@ console.log(calculateTotal(cart)); // Output: 30`;
     try {
       setLoading(true);
       setError(null);
+      console.log('Sending code for review:', code);
       const response = await getCodeReview(code);
+      console.log('Received response:', response);
       setReview(response);
     } catch (err) {
-      setError(err.response?.data || 'An error occurred while reviewing the code');
+      console.error('Review error:', err);
+      const errorMessage = err.response?.data 
+        ? `Server error: ${err.response.data}` 
+        : err.message || 'An error occurred while reviewing the code';
+      setError(`${errorMessage} (Status: ${err.response?.status || 'Unknown'})`);
     } finally {
       setLoading(false);
     }
